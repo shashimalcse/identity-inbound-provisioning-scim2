@@ -3771,9 +3771,8 @@ public class SCIMUserManager implements UserManager {
 
         UserStoreManager userStoreManager = carbonUM.getSecondaryUserStoreManager(userStoreName);
         if (userStoreManager == null) {
-            throw new BadRequestException("Invalid user store domain.");
-        }
-        else {
+            throw new BadRequestException("Invalid user store name.");
+        } else {
             try {
                 return userStoreManager.isSCIMEnabled();
             } catch (UserStoreException e) {
